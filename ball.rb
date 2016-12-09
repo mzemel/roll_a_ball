@@ -1,7 +1,7 @@
 class Ball
   attr_reader :x, :y
 
-  SPEED = 1
+  SPEED = 3
 
   def initialize
     @image = Gosu::Image.new("assets/ball.png")
