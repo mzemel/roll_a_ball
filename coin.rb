@@ -10,6 +10,6 @@ class Coin
   # No update
 
   def draw
-    @image.draw(x, y, z = 1)
+    @image.draw(x, y, z = 2)
   end
 end

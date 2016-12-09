@@ -20,7 +20,7 @@ class Ball
   end
 
   def draw
-    @image.draw(x, y, z = 0)
+    @image.draw(x, y, z = 3)
   end
 
   def top_left
