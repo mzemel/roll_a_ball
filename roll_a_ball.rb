@@ -1,4 +1,5 @@
 require 'gosu'
+require_relative 'ball'
 
 class RollABall < Gosu::Window
 
@@ -9,13 +10,16 @@ class RollABall < Gosu::Window
     super HEIGHT, WIDTH
     self.caption = "Roll A Ball"
 
+    @ball = Ball.new
     # Initialize other game objects here
   end
 
   def update
+    @ball.update
   end
 
   def draw
+    @ball.draw
   end
 end
 
