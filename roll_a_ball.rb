@@ -12,7 +12,9 @@ class RollABall < Gosu::Window
     self.caption = "Roll A Ball"
 
     @ball = Ball.new
-    @coins = [Coin.new(x: 100, y: 100)]
+    @coins = 10.times.collect do
+      Coin.new(x: rand(WIDTH), y: rand(HEIGHT))
+    end
     # Initialize other game objects here
   end
 
