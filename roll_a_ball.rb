@@ -1,6 +1,7 @@
 require 'gosu'
 require_relative 'ball'
 require_relative 'coin'
+require_relative 'collider'
 
 class RollABall < Gosu::Window
 
@@ -20,11 +21,20 @@ class RollABall < Gosu::Window
 
   def update
     @ball.update
+    @coins.each { |c| handle_collision(c, @ball) }
   end
 
   def draw
     @ball.draw
     @coins.each(&:draw)
+  end
+
+  private
+
+  def handle_collision(coin, ball)
+    if Collider.detect(coin, ball)
+      @coins = @coins.reject { |c| c == coin }
+    end
   end
 end
 

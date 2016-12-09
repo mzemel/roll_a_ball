@@ -1,6 +1,9 @@
 class Ball
   attr_reader :x, :y
 
+  WIDTH = 18
+  HEIGHT = 18
+
   SPEED = 3
 
   def initialize
@@ -18,6 +21,14 @@ class Ball
 
   def draw
     @image.draw(x, y, z = 0)
+  end
+
+  def top_left
+    [x, y]
+  end
+
+  def bottom_right
+    [x + WIDTH, y + HEIGHT]
   end
 
   private
